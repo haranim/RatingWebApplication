@@ -1,0 +1,62 @@
+﻿<div class='row'>
+    
+</div>
+<div class='row'>
+    <div class="panel panel-default">
+        <div class='panel-heading font-lucida'>SKILLS</div>
+
+        <div class='panel-body'>
+            <div>                   <!--Add Skill Content-->
+                <span class="col-sm-4">
+                    <input type="text" id="description" class="form-control" [(ngModel)]="model.description" name="description" placeholder="Add Skill.."
+                           required minlength="3" maxlength="24" #description="ngModel">
+                </span>
+                <span class="col-sm-4">
+                    <Rating-options [item]="model"></Rating-options>
+                </span>
+                <span class="col-sm-4">
+                    <button type="button" (click)="AddSkill()"
+                            class="btn btn-success pull-right">
+                        Add skill
+                    </button>
+                </span>
+            </div>
+            <div class="height30">                <!--Validation Messages-->
+                <div class="col-sm-6 paddingTop10">
+                    <div *ngIf="description.errors && (description.dirty || description.touched)"
+                         class="alert alert-danger">
+                        <div [hidden]="!description.errors.required">
+                            Skill Name is required
+                        </div>
+                        <div [hidden]="!description.errors.minlength">
+                            Skill Name must be at least 3 characters long.
+                        </div>
+                        <div [hidden]="!description.errors.maxlength">
+                            Skill Name cannot be more than 24 characters long.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='panel-body borderTop'>           <!--Table Data-->
+            <table class='table table-striped table-condensed table-noborder'>
+                <tr *ngFor="let item of skills">
+                    <!--<td> {{item.id}}  </td>-->
+                    <td class="col-md-6 tdTxtAlign">
+                        {{item.description}}
+                    </td>
+                    <td class="col-md-4"><Rating-options [item]="item"></Rating-options></td>
+                    <td class="col-md-1">
+                        <span class="glyphicon glyphicon-ok"
+                              (click)="onUpdate(item)" role="button"></span>
+                    </td>
+                    <td class="col-md-1">
+                        <span class="glyphicon glyphicon-remove"
+                              (click)="onDelete(item)" role="button"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

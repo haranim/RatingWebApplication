@@ -1,0 +1,31 @@
+﻿body {
+}
+
+.table-noborder tr td {
+    border-style: none;
+}
+
+.font-lucida {
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.paddingTop10 {
+    padding-top: 10px;
+}
+
+.height30 {
+    line-height: 18px;
+}
+
+.borderTop {
+    border-top: 2px solid rgb(221, 221, 221);
+}
+
+.tdTxtAlign {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: Calibri;
+    font-size: 16px;
+}
