@@ -9,7 +9,7 @@
             <div>                   <!--Add Skill Content-->
                 <span class="col-sm-4">
                     <input type="text" id="description" class="form-control" [(ngModel)]="model.description" name="description" placeholder="Add Skill.."
-                           required minlength="3" maxlength="24" #description="ngModel">
+                           minlength="3" maxlength="24" #description="ngModel" >
                 </span>
                 <span class="col-sm-4">
                     <Rating-options [item]="model"></Rating-options>
@@ -23,11 +23,8 @@
             </div>
             <div class="height30">                <!--Validation Messages-->
                 <div class="col-sm-6 paddingTop10">
-                    <div *ngIf="description.errors && (description.dirty || description.touched)"
+                    <div *ngIf="description.errors && (description.touched || description.dirty)"
                          class="alert alert-danger">
-                        <div [hidden]="!description.errors.required">
-                            Skill Name is required
-                        </div>
                         <div [hidden]="!description.errors.minlength">
                             Skill Name must be at least 3 characters long.
                         </div>

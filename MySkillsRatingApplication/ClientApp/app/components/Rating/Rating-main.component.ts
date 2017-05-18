@@ -45,6 +45,7 @@ export class mainRatingComponent extends OnInit {
             console.log("Adding New Skill ! ");
             this.Refresh();
             this.model = new Skills(0, '', 0);
+            
         })
     }
 
